@@ -118,17 +118,17 @@ POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
 POWERLEVEL9K_VCS_UNTRACKED_ICON='?'
 
 # Prompt element settings
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status os_icon battery dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time load background_jobs ram virtualenv rbenv rvm)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status os_icon battery dir vcs node_version)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
 
 # Time format
 POWERLEVEL9K_CUSTOM_TIME_FORMAT="%D{\uf017 %H:%M:%S}"
-# POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M \uf073 %d.%m.%y}" # enable for date as well
-POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M}"
+#POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M \uf073 %d.%m.%y}" # enable for date as well
+#POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M}"
 
 # General settings
 POWERLEVEL9K_STATUS_VERBOSE=false
-POWERLEVEL9K_PROMPT_ON_NEWLINE=false
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 # Settings to show only the current dir
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
@@ -147,3 +147,5 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 source  ~/.oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
+
+timeout 2s cmatrix
