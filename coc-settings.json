@@ -15,6 +15,20 @@
     "explorer.git.enable": true,
     "coc.preferences.formatOnSaveFiletypes": [
         "typescript",
-        "typescriptreact"
-    ]
+        "typescriptreact",
+        "typescriptreact",
+        "json",
+        "javascriptreact",
+        "typescript.tsx"
+    ],
+    "eslint.filetpes": [
+        "typescript",
+        "typescriptreact",
+        "typescriptreact",
+        "json",
+        "javascriptreact",
+        "typescript.tsx"
+    ],
+
+    "coc.preferences.diagnostic.virtualText": true
 }

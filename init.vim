@@ -1,17 +1,24 @@
 call plug#begin()
-Plug 'sainnhe/sonokai'
+
+" Theme
+Plug 'dracula/vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
+
+" File explore
 Plug 'preservim/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'dense-analysis/ale'
-Plug 'neoclide/coc.nvim' , { 'do' : 'yarn install --frozen-lockfile' }
+
+" Language client
+Plug 'neoclide/coc.nvim' , { 'branch': 'release' }
+
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 
+" Search tool
 if (has("nvim"))
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
@@ -26,11 +33,7 @@ Plug 'ianks/vim-tsx'
 " by default, if you open tsx file, neovim does not show syntax colors
 " typescript-vim will do all the coloring for typescript keywords
 Plug 'leafgarland/typescript-vim'
-
-Plug 'prettier/vim-prettier', {
-      \ 'do': 'yarn install',
-      \ 'for': ['javascript', 'typescript', 'typescriptreact', 'javascriptreact'] }
-
+Plug 'peitalin/vim-jsx-typescript'
 call plug#end()
 
 " Global Sets """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -67,16 +70,11 @@ if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
-endif
+endif"coc.preferences.diagnostic.virtualText": true,
 
-let g:sonokai_style = 'andromeda'
-let g:sonokai_enable_italic = 1
-let g:sonokai_disable_italic_comment = 0
-let g:sonokai_diagnostic_line_highlight = 1
-let g:sonokai_current_word = 'bold'
-colorscheme sonokai
+colorscheme dracula
 
-let g:airline_theme = 'sonokai'
+let g:airline_theme = 'dracula'
 
 if (has("nvim")) "Transparent background. Only for nvim
     highlight Normal guibg=NONE ctermbg=NONE
@@ -105,32 +103,6 @@ nmap <C-a> :NERDTreeToggle<CR>
 " map <C-k> <C-w>k
 " map <C-l> <C-w>l
 
-" ALE """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let js_fixers = ['prettier', 'eslint']
-
-let g:ale_linters = {
-\}
-
-let g:ale_fixers = {
-\   '*': ['trim_whitespace'],
-\   'javascript': js_fixers,
-\   'javascript.jsx': js_fixers,
-\   'typescript': js_fixers,
-\   'typescriptreact': js_fixers,
-\   'typescriptreact.tsx': js_fixers,
-\   'css': ['prettier'],
-\ 'json': ['prettier'],
-\}
-
-let g:ale_fix_on_save = 1
-
-let g:ale_completion_autoimport = 1
-
-let g:ale_sign_error = "🐛"
-let g:ale_sign_warning = "⚠️"
-let g:ale_sign_info = "ℹ"
-let g:ale_virtualtext_cursor = 1
-let g:ale_virtualtext_prefix = "🔥 "
 
 " Neovim """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'
 " Telescope """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
