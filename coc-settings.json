@@ -1,20 +1,18 @@
 {
-    "languageserver": {},
-    "explorer.width": 30,
-    "explorer.icon.enableNerdfont": true,
-    "explorer.previewAction.onHover": false,
-    "explorer.keyMappings.global": {
-        "<cr>": [
-            "expandable?",
-            "expand",
-            "open"
-        ],
-        "v": "open:vsplit",
-        "h": "open:split"
-    },
-    "explorer.git.enable": true,
-    "coc.preferences.formatOnSaveFiletypes": [
-        "typescript",
-        "typescriptreact"
-    ]
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "javascriptreact",
+    "typescript.tsx"
+  ],
+  "eslint.filetypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact",
+    "typescript.tsx"
+  ],
+  "coc.preferences.diagnostic.virtualText": true
 }
