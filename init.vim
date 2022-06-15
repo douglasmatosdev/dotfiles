@@ -25,6 +25,8 @@ if (has("nvim"))
     Plug 'nvim-telescope/telescope.nvim'
 endif
 
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
 "------------------------ VIM TSX ------------------------
 " by default, if you open tsx file, neovim does not show syntax colors
 " vim-tsx will do all the coloring for jsx in the .tsx file
@@ -96,7 +98,7 @@ let g:airline_powerline_fonts = 1
 
 " NERDTreeToggle """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <C-a> :NERDTreeToggle<CR>
-
+let NERDTreeShowHidden=1
 " Shortcuts for split navigation
 " map <C-h> <C-w>h
 " map <C-j> <C-w>j
